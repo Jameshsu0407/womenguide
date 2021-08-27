@@ -42,9 +42,7 @@ section {
 
 .mask_ani {
   position: relative;
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
-  height: 90vh;
+  height: 200vh;
   display: flex;
   flex-direction: row;
 }
@@ -79,16 +77,51 @@ section {
 }
 
 .mask_ani .slick_wrap {
-  flex: none;
-  scroll-snap-align: start;
+  position: sticky;
+  top: 0;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
 }
 
-.mask_ani .slick_wrap img {
+.mask_ani .slick_wrap .slick_same {
   width: 100vw;
-  height: 90vh;
-  object-fit: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mask_ani .slick_wrap .slick_same li {
+  width: 33.3333vh !important;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.mask_ani .slick_wrap .slick_same li a {
+  width: 33.3333vh;
+  height: 33.3333vh;
+  display: block;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.mask_ani .slick_wrap .slick_same li a:hover .bk_filter {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mask_ani .slick_wrap .slick_same li a .bk_filter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 10px;
+  background: linear-gradient(transparent 0%, black 100%);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .top_sec {
